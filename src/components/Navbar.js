@@ -10,18 +10,18 @@ const leftLinks = ['Home', 'TV Shows', 'Movies', 'Latest', 'My List'];
  * @function Navbar
  */
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () =>
-      window.pageYOffset > 75 ? setScrolled(true) : setScrolled(false)
+      window.pageYOffset > 75 ? setScrolled(true) : setScrolled(false);
 
-    const onScroll = window.addEventListener('scroll', handleScroll)
+    const onScroll = window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('scroll', onScroll);
     }
-  }, [])
+  }, []);
 
   return (
     <nav
@@ -48,11 +48,13 @@ const Navbar = () => {
           </a>
         </li>
 
-        {leftLinks.map(link => (
-          <li key={link}>
-            <a href="/">{link}</a>
-          </li>
-        ))}
+        {
+          leftLinks.map(link => (
+            <li key={link}>
+              <a href="/">{link}</a>
+            </li>
+          ))
+        }
       </ul>
 
       <ul className="right">
