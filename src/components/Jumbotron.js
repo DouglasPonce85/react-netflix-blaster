@@ -3,9 +3,8 @@ import React from 'react';
 import { css, jsx } from '@emotion/core';
 
 import Button from './Button';
-import wallpaper from '../img/wallpaper.jpg';
 import logo from '../img/logo.png';
-import slider from '../img/slider.png';
+import { wallpaper } from '../utils/global';
 
 /**
  * @function Jumbotron
@@ -23,8 +22,6 @@ const Jumbotron = () => (
             <Button icon="play">Play</Button>
             <Button icon="info-circle">More Info</Button>
         </div>
-
-        <img className="slider" src={slider} />
     </div>
 )
 

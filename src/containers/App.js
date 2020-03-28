@@ -3,6 +3,8 @@ import { Global, css, jsx } from '@emotion/core';
 
 import Navbar from '../components/Navbar';
 import Jumbotron from '../components/Jumbotron';
+import Footer from '../components/footer';
+import ContentRow from '../components/ContentRow';
 
 /**
  * @function App
@@ -13,6 +15,11 @@ const App = () => {
       <Global styles={GlobalCSS} />
       <Navbar />
       <Jumbotron />
+
+      <ContentRow category={'Trending Now'} />
+      <ContentRow category={'Drama'} />
+      <ContentRow category={'Comedies'} />
+      <Footer />
     </>
   );
 }
