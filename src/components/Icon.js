@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * @function Icon
+ */
 const Icon = ({ type, onClick }) => (
   <i className={`Icon fa fa-${type}`} onClick={onClick} />
 )
