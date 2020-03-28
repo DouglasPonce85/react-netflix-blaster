@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useState } from 'react';
 import { css, jsx } from '@emotion/core';
 
 import { imgs } from '../utils/global';
@@ -9,6 +9,8 @@ import ContentBlock from './ContentBlock';
  * @function ContentRow
  */
 const ContentRow = ({ category }) => {
+    const [hovered, setHovered] = useState(false);
+
     return (
         <div className="ContentRow"
             css={css`

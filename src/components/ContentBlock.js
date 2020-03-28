@@ -2,12 +2,18 @@
 import React from 'react';
 import { css, jsx } from '@emotion/core';
 
+import Icon from './Icon';
+
 /**
  * @function ContentBlock
  */
 const ContentBlock = ({ img }) => {
     return (
         <div css={contentStyle}>
+            <div className="content">
+                <Icon type="play" />
+                <Icon type="info-circle" />
+            </div>
             <img src={img} />
         </div>
     )
