@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { css, jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 
 import Icon from './Icon';
 
@@ -8,18 +9,33 @@ import Icon from './Icon';
  * @function ContentBlock
  */
 const ContentBlock = ({ img }) => {
+    const [hovered, setHovered] = useState(false);
+
+    const handleHover = useCallback(e => {
+        e.type === 'mouseenter' ?
+            setHovered(e.target.getAttribute('data-img')) :
+            setHovered(false);
+    }, []);
+
     return (
-        <div css={contentStyle}>
-            <div className="content">
-                <Icon type="play" />
-                <Icon type="info-circle" />
-            </div>
+        <BlockContainer
+            data-img={img}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHover}
+        >
+            { img === hovered && (
+                <div className="content">
+                    <Icon type="play" />
+                    <Icon type="info-circle" />
+                </div> )
+            }
+
             <img src={img} />
-        </div>
+        </BlockContainer>
     )
 };
 
-const contentStyle = css`
+const BlockContainer = styled.div`
     position: relative;
     flex: calc(18vw - 4px);
     flex-shrink: 0;

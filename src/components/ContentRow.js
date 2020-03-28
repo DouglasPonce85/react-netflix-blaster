@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState } from 'react';
+import React from 'react';
 import { css, jsx } from '@emotion/core';
 
 import { imgs } from '../utils/global';
@@ -9,8 +9,6 @@ import ContentBlock from './ContentBlock';
  * @function ContentRow
  */
 const ContentRow = ({ category }) => {
-    const [hovered, setHovered] = useState(false);
-
     return (
         <div className="ContentRow"
             css={css`
@@ -31,11 +29,13 @@ const ContentRow = ({ category }) => {
                 }
             `}>
                 <h2>{category}</h2>
-
                 <div className="block-wrapper">
                     {
                         imgs.map(img => (
-                            <ContentBlock key={img} img={img} />
+                            <ContentBlock
+                                key={img}
+                                img={img}
+                            />
                         ))
                     }
                 </div>
