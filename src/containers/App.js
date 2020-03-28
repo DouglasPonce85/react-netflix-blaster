@@ -57,7 +57,7 @@ const GlobalCSS = css`
     font-weight: 600;
     letter-spacing: 0.4px;
   }
-  i {
+ .Icon {
     font-size: 18.5px;
   }
 `

@@ -47,7 +47,7 @@ const JumbotronCSS = css`
       width: 100%;
     }
 
-    i {
+   .Icon {
       margin-right: 10.5px;
     }
   }
