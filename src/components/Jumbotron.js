@@ -2,29 +2,29 @@
 import React from 'react';
 import { css, jsx } from '@emotion/core';
 
-// import Button from './Button';
+import Button from './Button';
 import wallpaper from '../img/wallpaper.jpg';
-// import logo from '../img/logo.png';
-// import slider from '../img/slider.jpg';
+import logo from '../img/logo.png';
+import slider from '../img/slider.png';
 
 /**
  * @function Jumbotron
  */
 const Jumbotron = () => (
     <div css={JumbotronCSS}>
-        {/* <div className="synopsis">
+        <div className="synopsis">
             <img src={logo} />
 
             <p>
                 All he wants to do is leave town and start over. But first, he needs to
                 deal with his ex, his new roomie and the enemies who want him dead.
-      </p>
+            </p>
 
             <Button icon="play">Play</Button>
             <Button icon="info-circle">More Info</Button>
         </div>
 
-        <img className="slider" src={slider} /> */}
+        <img className="slider" src={slider} />
     </div>
 )
 
@@ -47,7 +47,7 @@ const JumbotronCSS = css`
       width: 100%;
     }
 
-    i {
+   .Icon {
       margin-right: 10.5px;
     }
   }
