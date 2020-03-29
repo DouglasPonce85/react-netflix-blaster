@@ -1,24 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { Global, css, jsx } from '@emotion/core';
 
 import Navbar from '../components/Navbar';
 import Jumbotron from '../components/Jumbotron';
 import Footer from '../components/footer';
 import ContentRow from '../components/ContentRow';
+import DetailPane from '../components/DetailPane';
+import { categories } from '../utils/global';
+
+
+const initialRow = {
+  category: '',
+  pos: { top: 0, bottom: 0 }
+
+}
 
 /**
  * @function App
  */
 const App = () => {
+  const [ activeRow, setActiveRow ] = useState(initialRow);
+
+  const { category, pos: { top, bottom } } = activeRow;
+
+  const navRef = createRef();
+
+  const setActive = (activeRow) => {
+    activeRow.category ? setActiveRow(activeRow) : setActiveRow(initialRow);
+  }
+
+  useEffect(() => {
+    if (!category) return;
+    const navHeight = navRef.current.offsetHeight;
+
+    window.scrollTo({
+      top: top + window.scrollY - navHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [category]);
+
   return (
     <>
       <Global styles={GlobalCSS} />
-      <Navbar />
-      <Jumbotron />
+      <Navbar ref={navRef} />
 
-      <ContentRow category={'Trending Now'} />
-      <ContentRow category={'Drama'} />
-      <ContentRow category={'Comedies'} />
+      <Jumbotron>
+        <ContentRow category={category[0]} setActive={setActive} />
+      </Jumbotron>
+
+      { categories ?
+        categories.slice(1).map(category => (
+          <ContentRow key={category} category={category} setActive={setActive} />)
+        ) : ''
+      }
+
+      <DetailPane category={category} pos={bottom} setActive={setActive} />
       <Footer />
     </>
   );
