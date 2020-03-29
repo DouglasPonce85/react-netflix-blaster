@@ -19,7 +19,16 @@ const ContentBlock = ({ category, img, setActive }) => {
 
     const getPos = useCallback(e => {
         const pos = e.target.parentElement.getBoundingClientRect();
-        setActive({ category, pos});
+        const playVideo = false;
+
+        setActive({ category, pos, playVideo });
+    }, []);
+
+    const playVideo = useCallback(e => {
+        const pos = e.target.parentElement.getBoundingClientRect();
+        const playVideo = true;
+
+        setActive({ category, pos, playVideo });
     }, []);
 
     return (
@@ -30,11 +39,10 @@ const ContentBlock = ({ category, img, setActive }) => {
         >
             {img === hovered && (
                 <div className="content">
-                    <Icon type="play" />
+                    <Icon type="play" onClick={playVideo} />
                     <Icon type="info-circle" onClick={getPos} />
                 </div>)
             }
-
             <img src={img} />
         </BlockContainer>
     )

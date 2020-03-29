@@ -11,8 +11,8 @@ import { categories } from '../utils/global';
 
 const initialRow = {
   category: '',
-  pos: { top: 0, bottom: 0 }
-
+  pos: { top: 0, bottom: 0 },
+  playVideo: false
 }
 
 /**
@@ -20,13 +20,14 @@ const initialRow = {
  */
 const App = () => {
   const [ activeRow, setActiveRow ] = useState(initialRow);
+  const [playVideo, setPlayVideo] = useState(false);
 
   const { category, pos: { top, bottom } } = activeRow;
-
   const navRef = createRef();
 
   const setActive = (activeRow) => {
     activeRow.category ? setActiveRow(activeRow) : setActiveRow(initialRow);
+    setPlayVideo(activeRow.playVideo);
   }
 
   useEffect(() => {
@@ -46,16 +47,28 @@ const App = () => {
       <Navbar ref={navRef} />
 
       <Jumbotron>
-        <ContentRow category={category[0]} setActive={setActive} />
+        <ContentRow
+          category={category[0]}
+          setActive={setActive}
+        />
       </Jumbotron>
 
       { categories ?
         categories.slice(1).map(category => (
-          <ContentRow key={category} category={category} setActive={setActive} />)
-        ) : ''
+          <ContentRow
+            key={category}
+            category={category}
+            setActive={setActive}
+          />
+        )) : ''
       }
 
-      <DetailPane category={category} pos={bottom} setActive={setActive} />
+      <DetailPane
+        category={category}
+        pos={bottom}
+        playVideo={playVideo}
+        setActive={setActive}
+      />
       <Footer />
     </>
   );
