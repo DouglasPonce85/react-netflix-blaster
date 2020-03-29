@@ -8,7 +8,7 @@ import Icon from './Icon';
 /**
  * @function ContentBlock
  */
-const ContentBlock = ({ category, img, setActive }) => {
+const ContentBlock = ({ category, showSelected, setActive }) => {
     const [hovered, setHovered] = useState(false);
 
     const handleHover = useCallback(e => {
@@ -21,29 +21,29 @@ const ContentBlock = ({ category, img, setActive }) => {
         const pos = e.target.parentElement.getBoundingClientRect();
         const playVideo = false;
 
-        setActive({ category, pos, playVideo });
+        setActive({ category, pos, playVideo, showSelected });
     }, []);
 
     const playVideo = useCallback(e => {
         const pos = e.target.parentElement.getBoundingClientRect();
         const playVideo = true;
 
-        setActive({ category, pos, playVideo });
+        setActive({ category, pos, playVideo, showSelected });
     }, []);
 
     return (
         <BlockContainer
-            data-img={img}
+            data-img={showSelected.imgUrl}
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
         >
-            {img === hovered && (
+            {showSelected.imgUrl === hovered && (
                 <div className="content">
                     <Icon type="play" onClick={playVideo} />
                     <Icon type="info-circle" onClick={getPos} />
                 </div>)
             }
-            <img src={img} />
+            <img src={showSelected.imgUrl} />
         </BlockContainer>
     )
 };

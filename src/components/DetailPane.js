@@ -8,17 +8,19 @@ import Icon from './Icon';
 /**
  * function DetailPane
  */
-const DetailPane = ({ category, pos, setActive, playVideo }) => {
+const DetailPane = ({ category, pos, setActive, playVideo, showSelected }) => {
     return (
         category && (
             <div css={css`
                 height: 475px;
                 background: black;
+                display: block;
                 width: 100%;
                 position: absolute;
                 border: 2px solid red;
                 top: ${pos + scrollY}px;
                 z-index: 99;
+                padding: 10px;
 
                 .Icon {
                   font-size: 32px;
@@ -30,7 +32,7 @@ const DetailPane = ({ category, pos, setActive, playVideo }) => {
                 }
             `}>
 
-                { playVideo && ( <ContentPlayer /> ) }
+                { playVideo && ( <ContentPlayer showSelected={showSelected} /> ) }
 
                 <Icon type="times" onClick={setActive} />
             </div>
