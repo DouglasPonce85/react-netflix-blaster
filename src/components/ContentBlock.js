@@ -8,13 +8,18 @@ import Icon from './Icon';
 /**
  * @function ContentBlock
  */
-const ContentBlock = ({ img }) => {
+const ContentBlock = ({ category, img, setActive }) => {
     const [hovered, setHovered] = useState(false);
 
     const handleHover = useCallback(e => {
         e.type === 'mouseenter' ?
             setHovered(e.target.getAttribute('data-img')) :
             setHovered(false);
+    }, []);
+
+    const getPos = useCallback(e => {
+        const pos = e.target.parentElement.getBoundingClientRect();
+        setActive({ category, pos});
     }, []);
 
     return (
@@ -26,7 +31,7 @@ const ContentBlock = ({ img }) => {
             {img === hovered && (
                 <div className="content">
                     <Icon type="play" />
-                    <Icon type="info-circle" />
+                    <Icon type="info-circle" onClick={getPos} />
                 </div>)
             }
 
@@ -49,8 +54,8 @@ const BlockContainer = styled.div`
         -ms-transform: scale(1.5); /* IE 9 */
         -webkit-transform: scale(1.5); /* Safari */
         transform: scale(1.5);
-        margin-left: 60px;
-        margin-right: 65px;
+        margin-left: 70px;
+        margin-right: 75px;
     }
 
     &:active {

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 
 import { css, jsx } from '@emotion/core';
 import netflixLogo from '../img/netflix-logo.png';
@@ -10,7 +10,7 @@ const leftLinks = ['Home', 'TV Shows', 'Movies', 'Latest', 'My List'];
 /**
  * @function Navbar
  */
-const Navbar = () => {
+const Navbar = forwardRef((props, ref) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,6 +26,7 @@ const Navbar = () => {
 
   return (
     <nav
+      ref={ref}
       css={[
         NavbarCSS,
         scrolled
@@ -72,7 +73,7 @@ const Navbar = () => {
       </ul>
     </nav>
   )
-}
+});
 
 const NavbarCSS = css`
   position: fixed;

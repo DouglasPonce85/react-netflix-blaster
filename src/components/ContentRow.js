@@ -8,17 +8,16 @@ import ContentBlock from './ContentBlock';
 /**
  * @function ContentRow
  */
-const ContentRow = ({ category }) => {
+const ContentRow = ({ category, setActive }) => {
     return (
         <div className="ContentRow"
             css={css`
                 padding: 30px 40px 5px;
-                overflow-x: hidden;
             `}>
 
             <div css={css`
                 h2 {
-                    margin: 20px 0 10px;
+                    margin: 10px 0 10px;
                     color: white;
                 }
 
@@ -35,6 +34,8 @@ const ContentRow = ({ category }) => {
                             <ContentBlock
                                 key={img}
                                 img={img}
+                                category={category}
+                                setActive={setActive}
                             />
                         ))
                     }
