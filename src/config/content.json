@@ -1,0 +1,101 @@
+[
+    {
+        "id": "TV Shows",
+        "rail": [
+            {
+                "id": "tv-001",
+                "title": "The Flash",
+                "img-url": "https://occ-0-2668-3934.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABT4fEAA_GtmFyVCbybEUkwg6-OS_wjClM0Dj64OW-2oiS6v3cwH6CUQlrOvT4s_UHELSrAyPviQ7Q8BO5zk0-uFzAKs.webp?r=39c",
+                "video-url": "https://youtu.be/UMRBs0-OXCA",
+                "info": {
+                    "sinopsis": "After being struck by lightning, Barry Allen wakes up from his coma to discover he's been given the power of super speed, becoming the Flash, fighting crime in Central City.",
+                    "Director": [
+                        "Greg Berlanti",
+                        "Geoff Johns",
+                        "Andrew Kreisberg"
+                    ],
+                    "Stars": [
+                        "Grant Gustin",
+                        "Candice Patton",
+                        "Danielle Panabaker"
+                    ]
+                }
+            },
+            {
+                "id": "tv-002",
+                "title": "Naruto",
+                "img-url": "https://occ-0-2668-3934.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTuKbE3KtHls9wNVTXXCjd2wPDfbk3_faC5f_n5GYnhDEVsm-S6KghBSL3c7pT9UnOneIz6ysMS3EBi-A2UnlqGioGI.webp?r=58b",
+                "video-url": "https://youtu.be/tA3yE4_t6SY",
+                "info": {
+                    "sinopsis": "Naruto Uzumaki, a mischievous adolescent ninja, struggles as he searches for recognition and dreams of becoming the Hokage, the village's leader and strongest ninja.",
+                    "Director": "Masashi Kishimoto",
+                    "Stars": [
+                        "Junko Takeuchi",
+                        "Maile Flanagan",
+                        "Kate Higgins"
+                    ]
+                }
+            },
+            {
+                "id": "tv-003",
+                "title": "Real Bob",
+                "img-url": "https://occ-0-2668-3934.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABe-DzdrqhNDxqHXudBZK2GtZt_6_JQMQqo6m6M8K5_e31fITTk58PMFjMc5xvg6yY07FR7aUd-W63q2LCa5neyw9E6jJ-nn9YhwQTwpcbgx63J9dbxOCSQj8WmNY.jpg?r=728",
+                "video-url": "https://youtu.be/mEf-94THH88",
+                "info": {
+                    "sinopsis": "Centers around comedian Rob Schneider's real life while living in Hollywood.",
+                    "Director": "Rob Schneider",
+                    "Stars": [
+                        "Rob Schneider",
+                        "Patricia Maya Schneider",
+                        "Jamie Lissow"
+                    ]
+                }
+            },
+            {
+                "id": "tv-004",
+                "title": "Mad Men",
+                "img-url": "https://occ-0-2668-3934.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTtHr_ehQ_w2XYDY__jxvDl5Ps5H8fGyiBtays7HJp2C4Q9fDlcJ4dz4QSIjZ58o5jZQWiZ9Lo4EC7xUtJ77kLVmZ4k.webp?r=9f9",
+                "video-url": "https://youtu.be/xUHlMgJxF30",
+                "info": {
+                    "sinopsis": "A drama about one of New York's most prestigious ad agencies at the beginning of the 1960s, focusing on one of the firm's most mysterious but extremely talented ad executives, Donald Draper.",
+                    "Director": "Matthew Weiner",
+                    "Stars": [
+                        "Jon Hamm",
+                        "Elisabeth Moss",
+                        "Vincent Kartheiser"
+                    ]
+                }
+            },
+            {
+                "id": "tv-005",
+                "title": "Mad Men",
+                "img-url": "https://occ-0-2668-3934.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTtHr_ehQ_w2XYDY__jxvDl5Ps5H8fGyiBtays7HJp2C4Q9fDlcJ4dz4QSIjZ58o5jZQWiZ9Lo4EC7xUtJ77kLVmZ4k.webp?r=9f9",
+                "video-url": "https://youtu.be/xUHlMgJxF30",
+                "info": {
+                    "sinopsis": "A drama about one of New York's most prestigious ad agencies at the beginning of the 1960s, focusing on one of the firm's most mysterious but extremely talented ad executives, Donald Draper.",
+                    "Director": "Matthew Weiner",
+                    "Stars": [
+                        "Jon Hamm",
+                        "Elisabeth Moss",
+                        "Vincent Kartheiser"
+                    ]
+                }
+            },
+            {
+                "id": "tv-006",
+                "title": "Money Heist",
+                "img-url": "https://occ-0-2668-3934.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABVqpAJEeo4a3O3aJF9n7QAIqplK8vtYkAtBvJg609lDN6qm7TW5-AzakTiAv6F1CGvSqPBY7MK2yTpVE4edhjP9E1kV0x63f16PECG-0zqsu6hGAiTc_lO40UubU1g.jpg?r=f39",
+                "video-url": "https://youtu.be/fvCdLmxnkj0",
+                "info": {
+                    "sinopsis": "A group of unique robbers assault the Factory of Moneda and Timbre to carry out the most perfect robbery in the history of Spain and take home 2.4 billion euros.",
+                    "Director": "Alex Pina",
+                    "Stars": [
+                        "Úrsula Corberó",
+                        "Álvaro Morte",
+                        "Itziar Ituño"
+                    ]
+                }
+            }
+        ]
+    }
+]

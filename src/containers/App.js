@@ -7,6 +7,7 @@ import Footer from '../components/footer';
 import ContentRow from '../components/ContentRow';
 import DetailPane from '../components/DetailPane';
 import { categories } from '../utils/global';
+import data from '../config/content.json';
 
 
 const initialRow = {
@@ -20,10 +21,11 @@ const initialRow = {
  */
 const App = () => {
   const [ activeRow, setActiveRow ] = useState(initialRow);
-  const [playVideo, setPlayVideo] = useState(false);
+  const [ playVideo, setPlayVideo] = useState(false);
 
   const { category, pos: { top, bottom } } = activeRow;
   const navRef = createRef();
+  const railData = data;
 
   const setActive = (activeRow) => {
     activeRow.category ? setActiveRow(activeRow) : setActiveRow(initialRow);
@@ -39,7 +41,10 @@ const App = () => {
       left: 0,
       behavior: 'smooth'
     });
+
   }, [category]);
+
+  console.log(railData);
 
   return (
     <>
