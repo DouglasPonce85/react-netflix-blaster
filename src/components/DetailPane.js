@@ -2,24 +2,25 @@
 import React from 'react';
 import { css, jsx } from '@emotion/core';
 
+import ContentPlayer from './ContentPlayer';
 import Icon from './Icon';
 
 /**
  * function DetailPane
  */
-const DetailPane = ({ category, pos, setActive }) => {
-    console.log('DetailPane - POS >> ', pos);
-
+const DetailPane = ({ category, pos, setActive, playVideo, showSelected }) => {
     return (
         category && (
             <div css={css`
                 height: 475px;
                 background: black;
+                display: block;
                 width: 100%;
                 position: absolute;
-                border: 2px solid white;
+                border: 2px solid red;
                 top: ${pos + scrollY}px;
                 z-index: 99;
+                padding: 10px;
 
                 .Icon {
                   font-size: 32px;
@@ -30,6 +31,9 @@ const DetailPane = ({ category, pos, setActive }) => {
                   cursor: pointer;
                 }
             `}>
+
+                { playVideo && ( <ContentPlayer showSelected={showSelected} /> ) }
+
                 <Icon type="times" onClick={setActive} />
             </div>
         )

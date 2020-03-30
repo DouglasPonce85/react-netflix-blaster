@@ -2,13 +2,12 @@
 import React from 'react';
 import { css, jsx } from '@emotion/core';
 
-import { imgs } from '../utils/global';
 import ContentBlock from './ContentBlock';
 
 /**
  * @function ContentRow
  */
-const ContentRow = ({ category, setActive }) => {
+const ContentRow = ({ category, setActive, rail }) => {
     return (
         <div className="ContentRow"
             css={css`
@@ -30,11 +29,11 @@ const ContentRow = ({ category, setActive }) => {
                 <h2>{category}</h2>
                 <div className="block-wrapper">
                     {
-                        imgs.map(img => (
+                        rail.map(show => (
                             <ContentBlock
-                                key={img}
-                                img={img}
+                                key={show.id}
                                 category={category}
+                                showSelected={show}
                                 setActive={setActive}
                             />
                         ))
@@ -46,7 +45,8 @@ const ContentRow = ({ category, setActive }) => {
 };
 
 ContentRow.defaultProps = {
-    category: 'Action'
+    category: 'Action',
+    rail: []
 }
 
 export default ContentRow;

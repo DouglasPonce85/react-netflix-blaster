@@ -6,27 +6,42 @@ import Jumbotron from '../components/Jumbotron';
 import Footer from '../components/footer';
 import ContentRow from '../components/ContentRow';
 import DetailPane from '../components/DetailPane';
-import { categories } from '../utils/global';
-
+import netflixData from '../config/content.json';
 
 const initialRow = {
   category: '',
-  pos: { top: 0, bottom: 0 }
-
-}
+  pos: { top: 0, bottom: 0 },
+  playVideo: false,
+  showSelected: {
+    id: '',
+    title: '',
+    imgUrl: '',
+    videoUrl: '',
+    info: {
+      sinopsis: '',
+      director: [],
+      stars: []
+    }
+  }
+};
 
 /**
  * @function App
  */
 const App = () => {
   const [ activeRow, setActiveRow ] = useState(initialRow);
+  const [ playVideo, setPlayVideo] = useState(false);
+  const [ showSelected, setShowSelected ] = useState(null);
 
   const { category, pos: { top, bottom } } = activeRow;
-
   const navRef = createRef();
+  const railCollection = (netflixData && netflixData.length) > 0 ? netflixData : [];
 
   const setActive = (activeRow) => {
     activeRow.category ? setActiveRow(activeRow) : setActiveRow(initialRow);
+
+    setPlayVideo(activeRow.playVideo);
+    setShowSelected(activeRow.showSelected);
   }
 
   useEffect(() => {
@@ -38,6 +53,7 @@ const App = () => {
       left: 0,
       behavior: 'smooth'
     });
+
   }, [category]);
 
   return (
@@ -46,16 +62,31 @@ const App = () => {
       <Navbar ref={navRef} />
 
       <Jumbotron>
-        <ContentRow category={category[0]} setActive={setActive} />
+        <ContentRow
+          category={ railCollection[0].category }
+          rail={ railCollection[0].rail }
+          setActive={setActive}
+        />
       </Jumbotron>
 
-      { categories ?
-        categories.slice(1).map(category => (
-          <ContentRow key={category} category={category} setActive={setActive} />)
-        ) : ''
+      { railCollection ?
+        railCollection.slice(1).map(rail => (
+          <ContentRow
+            key={rail.category}
+            category={rail.category}
+            rail={ rail.rail }
+            setActive={setActive}
+          />
+        )) : ''
       }
 
-      <DetailPane category={category} pos={bottom} setActive={setActive} />
+      <DetailPane
+        category={category}
+        pos={bottom}
+        playVideo={playVideo}
+        setActive={setActive}
+        showSelected={showSelected}
+      />
       <Footer />
     </>
   );
