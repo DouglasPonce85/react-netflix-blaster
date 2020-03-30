@@ -8,7 +8,7 @@ import Icon from './Icon';
 /**
  * @function ContentBlock
  */
-const ContentBlock = ({ category, showSelected, setActive }) => {
+const ContentBlock = ({ category, showSelected, setActive, isOriginalTile }) => {
     const [hovered, setHovered] = useState(false);
 
     const handleHover = useCallback(e => {
@@ -40,7 +40,7 @@ const ContentBlock = ({ category, showSelected, setActive }) => {
             {showSelected.imgUrl === hovered && (
                 <div className="content">
                     <Icon type="play" onClick={playVideo} />
-                    <Icon type="info-circle" onClick={getPos} />
+                    { !isOriginalTile && ( <Icon type="info-circle" onClick={getPos} /> )}
                 </div>)
             }
             <img src={showSelected.imgUrl} />
@@ -48,11 +48,14 @@ const ContentBlock = ({ category, showSelected, setActive }) => {
     )
 };
 
+ContentBlock.defaultProps = {
+    isOriginalTile: false
+}
+
 const BlockContainer = styled.div`
     position: relative;
     flex: calc(18vw - 4px);
     flex-shrink: 0;
-    height: 9.5vw;
     margin-right: 4px;
     transition: 300ms, transform 250ms ease;
     -moz-transition: 300ms, transform 250ms ease;
@@ -62,8 +65,8 @@ const BlockContainer = styled.div`
         -ms-transform: scale(1.5); /* IE 9 */
         -webkit-transform: scale(1.5); /* Safari */
         transform: scale(1.5);
-        margin-left: 70px;
-        margin-right: 75px;
+        margin-left: 5%;
+        margin-right: 5.5%;
     }
 
     &:active {

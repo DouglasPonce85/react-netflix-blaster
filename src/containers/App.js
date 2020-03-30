@@ -37,6 +37,9 @@ const App = () => {
   const navRef = createRef();
   const railCollection = (netflixData && netflixData.length) > 0 ? netflixData : [];
 
+  const normalRails = railCollection.filter(rail => !rail.isNetflixOriginal);
+  const originalRails = railCollection.filter(rail => rail.isNetflixOriginal);
+
   const setActive = (activeRow) => {
     activeRow.category ? setActiveRow(activeRow) : setActiveRow(initialRow);
 
@@ -69,15 +72,27 @@ const App = () => {
         />
       </Jumbotron>
 
-      { railCollection ?
-        railCollection.slice(1).map(rail => (
-          <ContentRow
-            key={rail.category}
-            category={rail.category}
-            rail={ rail.rail }
-            setActive={setActive}
-          />
-        )) : ''
+      { originalRails ? originalRails.map(rail => (
+            <ContentRow
+                key={rail.category}
+                category={rail.category}
+                rail={ rail.rail }
+                setActive={setActive}
+                isOriginalTile={true}
+              />
+            )
+        ) : ''
+      }
+
+      { normalRails ? normalRails.slice(1).map(rail => (
+            <ContentRow
+                key={rail.category}
+                category={rail.category}
+                rail={ rail.rail }
+                setActive={setActive}
+              />
+            )
+        ) : ''
       }
 
       <DetailPane
