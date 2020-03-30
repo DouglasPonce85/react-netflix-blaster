@@ -1,6 +1,12 @@
 # React - Netflix Clone
 
-![Netflix Blaster](https://tfwiki.net/mediawiki/images2/thumb/6/67/SDCCBlasterBoxArt.jpg/300px-SDCCBlasterBoxArt.jpg = 50x50)
+<img src="https://tfwiki.net/mediawiki/images2/thumb/6/67/SDCCBlasterBoxArt.jpg/300px-SDCCBlasterBoxArt.jpg" width="120">
+
+I'm a Big "Old School" Transformer's Fan. So probably at this point you may wondered...
+
+| QUESTION | DESCRIPTION |
+| ------ | ----------- |
+| Why named it Blaster?   | So here it goes as interesting for this character. Blaster is the Autobots' Communications Specialist, music enthusiast, and resident boombox with his own team of mini-cassettes and a strong disdain for Decepticons. |
 
 ## Features
 - React with react-hooks (useState, useCallback, useEffect)
