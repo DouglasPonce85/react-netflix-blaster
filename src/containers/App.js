@@ -69,15 +69,16 @@ const App = () => {
         />
       </Jumbotron>
 
-      {/* { railCollection ?
-        railCollection.slice(1).map(category => (
+      { railCollection ?
+        railCollection.slice(1).map(rail => (
           <ContentRow
-            key={category}
-            category={category}
+            key={rail.category}
+            category={rail.category}
+            rail={ rail.rail }
             setActive={setActive}
           />
         )) : ''
-      } */}
+      }
 
       <DetailPane
         category={category}
