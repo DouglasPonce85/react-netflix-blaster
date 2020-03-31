@@ -1,4 +1,4 @@
-# React - Netflix Clone
+# React Blaster - Netflix Clone
 
 <img src="https://tfwiki.net/mediawiki/images2/thumb/6/67/SDCCBlasterBoxArt.jpg/300px-SDCCBlasterBoxArt.jpg" width="120">
 
