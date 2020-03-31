@@ -2,7 +2,7 @@
 
 <img src="https://tfwiki.net/mediawiki/images2/thumb/6/67/SDCCBlasterBoxArt.jpg/300px-SDCCBlasterBoxArt.jpg" width="120">
 
-I'm a Big "Old School" Transformer's Fan. So probably at this point you may wondered...
+**I'm a big "Old School" Transformer's Fan**. So probably at this point you may wondered...
 
 | QUESTION | DESCRIPTION |
 | ------ | ----------- |
