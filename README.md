@@ -26,6 +26,6 @@
 ```
 
 ## Previews
-![Netflix Blaster](https://i.ibb.co/H7cxqSL/netflix-blaster1.png)
+![Netflix Blaster](https://douglasponce85.github.io/images/projects/netflix-blaster.png)
 ![Netflix Blaster](https://i.ibb.co/Byr3LX9/netflix-blaster2.png)
 ![Netflix Blaster](https://i.ibb.co/Lr9qznr/netflix-blaster3.png)
